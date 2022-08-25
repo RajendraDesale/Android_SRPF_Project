@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/loginCard"
+    android:orientation="vertical"
+    android:background="@color/whiteCardColor"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:layout_gravity="center"
+    app:cardCornerRadius="@dimen/loginCardRadius"
+    tools:context=".singup">
+
+    <LinearLayout
+        style="@style/linearParent"
+        android:layout_gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="118dp"
+            android:layout_height="118dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/mlogo" />
+
+        <TextView
+            style="@style/headerTextPrimary"
+            android:layout_marginTop="5dp"
+            android:text="Registration Form"
+            android:textColor="#039BE5" />
+
+        <EditText
+            android:id="@+id/sname"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="Enter Your Name"
+            android:textSize="20sp"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"        />
+
+
+
+        <EditText
+            android:id="@+id/smobile"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="Enter Mobile No."
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <EditText
+            android:id="@+id/semail"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="Enter Email Id."
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+        <Spinner
+            android:id="@+id/sp1"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:ems="10"
+            android:background="@drawable/bg_spinner_fruit"
+            android:dropDownSelector="@color/colorWhite"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"/>
+
+        <Spinner
+            android:id="@+id/sp2"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            android:textColorHint="#757575"
+            android:ems="10"
+            android:minHeight="48dp"
+            />
+
+        <EditText
+            android:id="@+id/sdgpno"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="Enter DGP No."
+            android:minHeight="48dp"
+            android:textColorHint="#757575"/>
+
+        <EditText
+            android:id="@+id/spass"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="Enter_password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"/>
+
+        <Button
+            android:id="@+id/btnreg"
+            style="@style/loginButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Register" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:onClick="btnLogin"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Already registered login here"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/create_new_account"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

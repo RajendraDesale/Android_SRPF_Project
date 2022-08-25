@@ -1,0 +1,21 @@
+<resources>
+
+
+    <string name="login_background">login background</string>
+    <string name="enter_your_dgp_no" />
+
+    <string name="login" />
+    <string name="create_new_account" />
+
+    <string name="app_name">SRPFGroup-2</string>
+    <string name="logout">Logout</string>
+
+    <string name="enter_mobile_no">Enter Mobile No</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="register">Register</string>
+    <string name="already_registered_nlogin_here">Already Registered?\nLogin here.</string>
+    <string name="enter_your_email">Enter your Email</string>
+
+
+</resources>
