@@ -1,18 +1,13 @@
-package com.srpf.srpf_gp_2;
+package com.srpf.srpf_gp_2.Model;
 
-public class responsemodel
-{
-    String message;
+public class UserRegistrationResponse {
+    private String message;
 
-    public responsemodel(String message) {
+    public UserRegistrationResponse(String message) {
         this.message = message;
     }
 
-    public responsemodel() {
-    }
-
     public String getMessage() {
-
         return message;
     }
 

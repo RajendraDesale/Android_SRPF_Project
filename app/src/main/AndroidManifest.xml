@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.srpf.srpf_gp_2" >
+    package="com.srpf.srpf_gp_2">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,28 +16,33 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.SRPFGP2"
-        tools:targetApi="31" >
+        tools:targetApi="31">
         <activity
-            android:name=".singup"
-            android:exported="false" />
-        <activity
-            android:name=".loginform"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+            android:name=".Activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".dashboard"
-            android:exported="true" >
-        </activity>
-        <activity android:name=".Success" >
-        </activity>
-    </application>
 
+        <activity
+            android:name=".Activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.DashboardActivity"
+            android:exported="true"></activity>
+
+        <service
+            android:name=".Services.MyFirebaseInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+    </application>
 </manifest>
