@@ -42,6 +42,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayAdapter<String> cityAdapter;
     private RequestQueue requestQueue;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
