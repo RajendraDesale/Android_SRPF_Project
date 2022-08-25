@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "901911469159",
+    "project_id": "srpfmobileapp",
+    "storage_bucket": "srpfmobileapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901911469159:android:7c97e7b16f0e1b8879c8c2",
+        "android_client_info": {
+          "package_name": "com.socialapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901911469159-pht4931vel7s6fiqtojkau7r0366vtv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8b-iNzESpDTv5-RKTNazdANyFAgvczE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901911469159-pht4931vel7s6fiqtojkau7r0366vtv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901911469159:android:82066b05c38b5f3379c8c2",
+        "android_client_info": {
+          "package_name": "com.srpf.srpf_gp_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901911469159-pht4931vel7s6fiqtojkau7r0366vtv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8b-iNzESpDTv5-RKTNazdANyFAgvczE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901911469159-pht4931vel7s6fiqtojkau7r0366vtv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

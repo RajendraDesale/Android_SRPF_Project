@@ -9,7 +9,7 @@
     android:layout_marginBottom="@dimen/loginViewsMargin"
     android:layout_gravity="center"
     app:cardCornerRadius="@dimen/loginCardRadius"
-    tools:context=".singup">
+    tools:context=".Activity.SignUpActivity">
 
     <LinearLayout
         style="@style/linearParent"

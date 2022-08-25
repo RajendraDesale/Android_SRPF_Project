@@ -1,10 +1,12 @@
-package com.srpf.srpf_gp_2;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.srpf.srpf_gp_2.Activity;
 
 import android.os.Bundle;
 
-public class loginform extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.srpf.srpf_gp_2.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
