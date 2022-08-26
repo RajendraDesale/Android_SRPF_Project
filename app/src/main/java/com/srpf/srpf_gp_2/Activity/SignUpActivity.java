@@ -2,6 +2,8 @@ package com.srpf.srpf_gp_2.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -51,12 +53,17 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         sp1 = findViewById(R.id.sp1);
         sp2 = findViewById(R.id.sp2);
         sname = (EditText) findViewById(R.id.sname);
-
         semail = (EditText) findViewById(R.id.semail);
         smobile = (EditText) findViewById(R.id.smobile);
         sdgpno = (EditText) findViewById(R.id.sdgpno);
         spass = (EditText) findViewById(R.id.spass);
         btn = (Button) findViewById(R.id.btnreg);
+
+        sname.addTextChangedListener(loginTextWatcher);
+        semail.addTextChangedListener(loginTextWatcher);
+        smobile.addTextChangedListener(loginTextWatcher);
+        sdgpno.addTextChangedListener(loginTextWatcher);
+        spass.addTextChangedListener(loginTextWatcher);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +105,31 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         requestQueue.add(jsonObjectRequest);
         sp1.setOnItemSelectedListener(this);
     }
+
+    //check input text Empty text watcher
+    private TextWatcher loginTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String textName = sname.getText().toString().trim();
+            String textMobile = smobile.getText().toString().trim();
+            String textEmailAddress = semail.getText().toString().trim();
+            String textDgpno = sdgpno.getText().toString().trim();
+            String textPassword = spass.getText().toString().trim();
+
+            btn.setEnabled(!textMobile.isEmpty() && !textName.isEmpty() && !textEmailAddress.isEmpty()  && !textDgpno.isEmpty() && !textPassword.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
+    //end
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

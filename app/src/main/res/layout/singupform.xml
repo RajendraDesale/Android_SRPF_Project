@@ -16,18 +16,12 @@
         android:layout_gravity="center"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="118dp"
-            android:layout_height="118dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/mlogo" />
-
         <TextView
             style="@style/headerTextPrimary"
             android:layout_marginTop="5dp"
             android:text="Registration Form"
             android:textColor="#039BE5" />
+
 
         <EditText
             android:id="@+id/sname"
@@ -35,12 +29,11 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
+            android:layout_gravity="center"
             android:hint="Enter Your Name"
-            android:textSize="20sp"
             android:minHeight="48dp"
-            android:textColorHint="#757575"        />
-
-
+            android:textColorHint="#757575"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/smobile"
@@ -49,6 +42,7 @@
             android:layout_marginTop="5dp"
             android:autofillHints=""
             android:ems="10"
+            android:layout_gravity="center"
             android:hint="Enter Mobile No."
             android:minHeight="48dp"
             android:textColorHint="#757575" />
@@ -59,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
+            android:layout_gravity="center"
             android:hint="Enter Email Id."
             android:minHeight="48dp"
             android:textColorHint="#757575" />
@@ -69,6 +64,7 @@
             android:layout_marginTop="5dp"
             android:textSize="20sp"
             android:ems="10"
+            android:layout_gravity="center"
             android:background="@drawable/bg_spinner_fruit"
             android:dropDownSelector="@color/colorWhite"
             android:minHeight="48dp"
@@ -81,6 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:visibility="gone"
+            android:layout_gravity="center"
             android:textColorHint="#757575"
             android:ems="10"
             android:minHeight="48dp"
@@ -93,6 +90,7 @@
             android:layout_marginTop="5dp"
             android:autofillHints=""
             android:ems="10"
+            android:layout_gravity="center"
             android:hint="Enter DGP No."
             android:minHeight="48dp"
             android:textColorHint="#757575"/>
@@ -104,6 +102,7 @@
             android:layout_marginTop="5dp"
             android:autofillHints=""
             android:ems="10"
+            android:layout_gravity="center"
             android:hint="Enter_password"
             android:inputType="textPassword"
             android:minHeight="48dp"
@@ -114,7 +113,9 @@
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="Register" />
+            android:text="Register"
+            android:enabled="false"
+            />
 
 
         <TextView

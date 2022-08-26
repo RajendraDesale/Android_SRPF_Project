@@ -16,13 +16,6 @@
         android:layout_gravity="center"
         android:padding="@dimen/loginViewsMargin">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="129dp"
-            android:layout_height="137dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/mlogo" />
-
         <TextView
             style="@style/headerTextPrimary"
             android:text="Login"
