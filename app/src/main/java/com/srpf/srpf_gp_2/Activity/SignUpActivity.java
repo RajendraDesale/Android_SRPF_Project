@@ -24,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.srpf.srpf_gp_2.R;
+import com.srpf.srpf_gp_2.Utils.SharedPrefManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,14 +36,15 @@ import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String url = "https://oneclickhub.in/srpf/userRegister.php";
-    EditText sname, semail, smobile, sdgpno, spass;
-    Button btn;
+    private EditText sname, semail, smobile, sdgpno, spass;
+    private Button btn;
     private Spinner sp1, sp2;
     private ArrayList<String> countryList = new ArrayList<>();
     private ArrayList<String> cityList = new ArrayList<>();
     private ArrayAdapter<String> countryAdapter;
     private ArrayAdapter<String> cityAdapter;
     private RequestQueue requestQueue;
+    private String firebaseToken;
 
 
     @Override
@@ -50,6 +52,9 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
         requestQueue = Volley.newRequestQueue(this);
+
+        firebaseToken = SharedPrefManager.getInstance(this).getDeviceToken();
+
         sp1 = findViewById(R.id.sp1);
         sp2 = findViewById(R.id.sp2);
         sname = (EditText) findViewById(R.id.sname);
@@ -68,8 +73,12 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                register_user(sname.getText().toString(), semail.getText().toString(), smobile.getText().toString(), sdgpno.getText().toString(), spass.getText().toString(),
-                        sp1.getSelectedItem().toString(), sp2.getSelectedItem().toString());
+                register_user(sname.getText().toString(),
+                        semail.getText().toString(),
+                        smobile.getText().toString(),
+                        sdgpno.getText().toString(),
+                        spass.getText().toString(),
+                        sp1.getSelectedItem().toString());
             }
         });
 
@@ -133,7 +142,6 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
         if (adapterView.getId() == R.id.sp1) {
             cityList.clear();
             String selectedCountry = adapterView.getSelectedItem().toString();
@@ -145,7 +153,6 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 @Override
                 public void onResponse(JSONObject response) {
                     try {
-
                         JSONArray jsonArray = response.getJSONArray("tbl_company");
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -168,11 +175,10 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 }
             });
             requestQueue.add(jsonObjectRequest);
-
         }
     }
 
-    public void register_user(final String name, final String email, final String mobno, final String dgpno, final String pass, final String spn1, String spn2) {
+    public void register_user(final String name, final String email, final String mobno, final String dgpno, final String pass, final String spn1) {
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -181,8 +187,6 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 smobile.setText("");
                 sdgpno.setText("");
                 spass.setText("");
-
-
                 Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
             }
         }, new Response.ErrorListener() {
@@ -193,10 +197,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 smobile.setText("");
                 sdgpno.setText("");
                 spass.setText("");
-
-
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-
             }
         }
         ) {
@@ -210,7 +211,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 map.put("DGP_No", dgpno);
                 map.put("password", pass);
                 map.put("CompanyName", spn1);
-                map.put("CompanyID", spn2);
+                map.put("Token", firebaseToken);
+                map.put("CompanyID", spn1);
                 return map;
             }
         };
@@ -220,13 +222,12 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void btnLogin(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 }
