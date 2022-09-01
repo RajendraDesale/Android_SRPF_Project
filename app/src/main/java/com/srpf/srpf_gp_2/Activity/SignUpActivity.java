@@ -44,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     private RequestQueue requestQueue;
     private String firebaseToken;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
