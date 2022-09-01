@@ -6,21 +6,21 @@ import com.srpf.srpf_gp_2.Interface.apiset;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class controller {
+public class ApiController {
     private static final String url = "https://oneclickhub.in/srpf/";
-    private static controller clienobject;
+    private static ApiController clienobject;
     private static Retrofit retrofit;
 
-    controller() {
+    ApiController() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 
-    public static synchronized controller getInstance() {
+    public static synchronized ApiController getInstance() {
         if (clienobject == null)
-            clienobject = new controller();
+            clienobject = new ApiController();
         return clienobject;
     }
 

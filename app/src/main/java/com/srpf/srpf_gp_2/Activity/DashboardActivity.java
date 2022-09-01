@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.srpf.srpf_gp_2.R;
 
 public class DashboardActivity extends AppCompatActivity {
-    TextView tv;
-    Button btn;
+    private TextView tv;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class DashboardActivity extends AppCompatActivity {
                 sp.edit().remove("username").commit();
                 sp.edit().remove("password").commit();
                 sp.edit().apply();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
         });
@@ -43,6 +43,6 @@ public class DashboardActivity extends AppCompatActivity {
         if (sp.contains("username"))
             tv.setText(sp.getString("username", ""));
         else
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
 }
